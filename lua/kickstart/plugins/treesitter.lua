@@ -4,8 +4,9 @@ return {
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-    config = function()
-      require('nvim-treesitter.install').compilers = { 'gcc', 'cmake' }
+    config = function(_, opts)
+      require('nvim-treesitter.install').compilers = { 'zig', 'gcc', 'cmake' }
+      require('nvim-treesitter.configs').setup(opts)
     end,
     opts = {
       ensure_installed = {
@@ -13,13 +14,27 @@ return {
         'c',
         'diff',
         'html',
+        'javascript',
+        'jsdoc',
+        'json',
+        'jsonc',
         'lua',
         'luadoc',
+        'luap',
+        'markdown',
+        'markdown_inline',
+        'printf',
+        'python',
         'query',
+        'regex',
+        'toml',
+        'tsx',
+        'typescript',
         'vim',
         'vimdoc',
-        'javascript',
-        'typescript',
+        'xml',
+        'yaml',
+        'zig',
         'go',
       },
       -- Autoinstall languages that are not installed
@@ -32,6 +47,7 @@ return {
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
+      fold = { enable = true },
     },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
