@@ -94,7 +94,9 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 local node_host = vim.fn.system('which bun'):gsub('/', '\\')
-vim.g.node_host_prog = node_host
+local python3_host = vim.fn.system('which python3'):gsub('\n', '')
+vim.g.node_host_prog = vim.fn.trim(node_host)
+vim.g.python3_host_prog = vim.fn.trim(python3_host)
 
 -- [[ Setting options ]]
 require 'options'

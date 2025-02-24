@@ -2,4 +2,12 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  {
+    'sainnhe/gruvbox-material',
+    priority = 1000,
+    init = function()
+      vim.cmd.colorscheme 'gruvbox-material'
+    end,
+  },
+}

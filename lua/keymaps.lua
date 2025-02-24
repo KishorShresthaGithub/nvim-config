@@ -48,6 +48,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set('n', '<leader>m', "''", { desc = 'Jump to mark' })
 vim.keymap.set('n', '<C-x>', '<C-v>', { desc = 'Enter visual mode' })
 vim.keymap.set('n', '<leader>w', '<C-w>', { desc = 'Windows: ' })
-vim.keymap.set('n', '<leader>bb', ':buffers', { desc = 'Windows: ' })
+vim.keymap.set('n', '<leader>bb', ':buffers', { desc = 'Buffers: ' })
+
+vim.keymap.set('n', '<leader>bb', ':buffers<CR>', { desc = 'List Buffers' })
+vim.keymap.set('n', '<leader>b', ':buffer', { desc = 'Open buffer ' })
 
 -- vim: ts=2 sts=2 sw=2 et

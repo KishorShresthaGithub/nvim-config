@@ -1,6 +1,7 @@
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
@@ -10,32 +11,23 @@ return {
     end,
     opts = {
       ensure_installed = {
-        'bash',
-        'c',
-        'diff',
-        'html',
+        'query',
+        'tsx',
+        'typescript',
         'javascript',
+        'html',
         'jsdoc',
         'json',
         'jsonc',
         'lua',
         'luadoc',
         'luap',
-        'markdown',
-        'markdown_inline',
-        'printf',
         'python',
-        'query',
         'regex',
-        'toml',
-        'tsx',
-        'typescript',
-        'vim',
-        'vimdoc',
         'xml',
         'yaml',
         'zig',
-        'go',
+        'c',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
