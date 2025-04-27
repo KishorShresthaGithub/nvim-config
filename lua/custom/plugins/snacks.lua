@@ -433,13 +433,13 @@ return {
       end,
       desc = 'Delete Buffer',
     },
-    {
-      '<leader>cR',
-      function()
-        Snacks.rename.rename_file()
-      end,
-      desc = 'Rename File',
-    },
+    -- {
+    --   '<leader>cr',
+    --   function()
+    --     Snacks.rename.rename_file()
+    --   end,
+    --   desc = 'Rename File',
+    -- },
     {
       '<leader>gB',
       function()
