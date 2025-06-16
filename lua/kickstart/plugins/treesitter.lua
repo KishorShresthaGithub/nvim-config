@@ -6,7 +6,7 @@ return {
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     config = function(_, opts)
-      require('nvim-treesitter.install').compilers = { 'zig', 'gcc', 'cmake' }
+      require('nvim-treesitter.install').compilers = { 'gcc', 'zig', 'cmake' }
       require('nvim-treesitter.configs').setup(opts)
     end,
     opts = {

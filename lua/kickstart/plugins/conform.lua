@@ -16,7 +16,7 @@ return {
     opts = {
       notify_on_error = false,
       format_on_save = {
-        timeout_ms = 1000,
+        timeout_ms = 5000,
         lsp_format = 'fallback',
       },
       formatters_by_ft = {
@@ -32,6 +32,7 @@ return {
         svelte = { 'prettier', 'prettierd', stop_after_first = true },
         go = { 'gofmt', 'goimports', stop_after_first = true },
         rust = { 'rustfmt', lsp_format = 'fallback', stop_after_first = true },
+        markdown = { 'markdownlint', lsp_format = 'fallback', stop_after_first = true },
       },
     },
   },

@@ -23,6 +23,11 @@ return {
         -- wo = { wrap = true } -- Wrap notifications
       },
     },
+    zen = {
+      win = {
+        width = 0.6,
+      },
+    },
   },
   keys = {
     -- Top Pickers & Explorer

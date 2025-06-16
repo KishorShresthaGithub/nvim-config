@@ -32,7 +32,7 @@ return {
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
     },
-    config = function()
+    config = function(event)
       -- Brief aside: **What is LSP?**
       --
       -- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -51,6 +51,8 @@ return {
       --  - Autocompletion
       --  - Symbol Search
       --  - and more!
+      --
+
       --
       -- Thus, Language Servers are external tools that must be installed separately from
       -- Neovim. This is where `mason` and related plugins come into play.
@@ -78,27 +80,23 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
+          --
+          map('gd', '<cmd>FzfLua lsp_definitions     jump1=true ignore_current_line=true<cr>', 'Goto Definition')
           -- Find references for the word under your cursor.
-          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-
+          map('gr', '<cmd>FzfLua lsp_references      jump1=true ignore_current_line=true<cr>', 'References')
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gi', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-
+          map('gi', '<cmd>FzfLua lsp_implementations jump1=true ignore_current_line=true<cr>', 'Goto Implementation')
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
-          --  the definition of its *type*, not where it was *defined*.
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+          map('gy', '<cmd>FzfLua lsp_typedefs        jump1=true ignore_current_line=true<cr>', 'Goto T[y]pe Definition')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ss', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('<leader>sS', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
@@ -212,7 +210,6 @@ return {
         prettier = {},
         cssls = {},
         html = {},
-        tailwindcss = {},
       }
 
       -- Ensure the servers and tools above are installed

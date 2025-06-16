@@ -53,4 +53,12 @@ vim.keymap.set('n', '<leader>bb', ':buffers', { desc = 'Buffers: ' })
 vim.keymap.set('n', '<leader>bb', ':buffers<CR>', { desc = 'List Buffers' })
 vim.keymap.set('n', '<leader>b', ':buffer', { desc = 'Open buffer ' })
 
+vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
+vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close Other Tabs" })
+vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
+vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
+vim.keymap.set("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
+vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+vim.keymap.set("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
 -- vim: ts=2 sts=2 sw=2 et
