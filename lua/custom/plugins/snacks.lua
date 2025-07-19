@@ -23,6 +23,11 @@ return {
         -- wo = { wrap = true } -- Wrap notifications
       },
     },
+    terminal = {
+      win = {
+        height = 0.25,
+      },
+    },
     zen = {
       win = {
         width = 0.6,
